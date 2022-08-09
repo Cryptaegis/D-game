@@ -1,0 +1,16 @@
+.grid-container {
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+}
+.p1 {
+  background-color: red;
+}
+.p2 {
+  background-color: aqua;
+}
+
+@media screen and (min-width: 1000px) {
+  .grid-container {
+    width: 200%;
+  }
+}
