@@ -1,16 +1,53 @@
-.grid-container {
-  display: grid;
-  grid-template-rows: 200px 200px 200px;
-}
-.p1 {
-  background-color: red;
-}
-.p2 {
-  background-color: aqua;
+header {
+  text-align: center;
 }
 
-@media screen and (min-width: 1000px) {
-  .grid-container {
-    width: 200%;
+.dice {
+  height: 25em;
+  display: flex;
+  justify-content: space-around;
+}
+aside {
+  font-size: larger;
+}
+.first,
+.second {
+  width: 100%;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+.btn {
+  padding: 0.5em;
+}
+.current1,
+.current2 {
+  width: 20%;
+  height: 6.25em;
+  text-align: center;
+  background-color: red;
+  overflow: auto;
+}
+.current2 {
+  order: 2;
+}
+.bi-plus-circle,
+.bi-save-fill,
+.bi-arrow-clockwise {
+  color: red;
+}
+@media only screen and (max-width: 500px) {
+  .dice {
+    display: grid;
+    padding-top: 1rem;
+  }
+  footer {
+    width: auto;
+    font-size: x-small;
+  }
+  #btn {
+    font-size: 3em;
   }
 }
