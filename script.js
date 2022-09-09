@@ -31,3 +31,26 @@ function rollTheDice() {
     }
   }, 2500);
 }*/
+
+let image = [
+  "face-1.jpg",
+  "face-2.jpg",
+  "face-3.jpg",
+  "face-4.jpg",
+  "face-5.jpg",
+  "face-6.jpg",
+];
+let die = document.querySelectorAll("image");
+//function to create a new game on click*/
+const newGame = document.getElementById("btn-new");
+const hold = document.getElementById("btn-hold");
+const pFirst = document.getElementById("first");
+const pSecond = document.getElementById("second");
+const rollTheDice = document.getElementById("btn-roll");
+let pic = documentgetElementById("dice-pic");
+
+rollDice = () => {
+  let randomNumber = Math.floor(Math.random() * 6) + 1;
+  console.log(image[randomNumber]);
+};
+rollTheDice.addEventListener("click", rollDice);

@@ -38,6 +38,22 @@ footer {
 .bi-arrow-clockwise {
   color: red;
 }
+
+.dice-pic {
+  margin-top: 50%;
+  animation: shake 0.5s infinite;
+}
+@keyframes #image {
+  0% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(8deg);
+  }
+}
 @media only screen and (max-width: 500px) {
   .dice {
     display: grid;

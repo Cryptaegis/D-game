@@ -15,6 +15,11 @@
       href="https://fonts.google.com/specimen/Lato#standard-styles"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -24,6 +29,7 @@
       <div>
         <h1 class="first">PLAYER 1</h1>
       </div>
+      <div><img id="dice-pic" src="images/face-1.jpg" /></div>
 
       <aside>
         <h1 class="second">PLAYER 2</h1>
@@ -32,12 +38,15 @@
 
     <footer>
       <h4 class="current1">CURRENT</h4>
+
       <h4 class="current2">CURRENT</h4>
 
       <div>
-        <h4 class="btn"><i class="bi bi-arrow-clockwise"></i>ROLL DICE</h4>
+        <h4 class="btn">
+          <i class="bi bi-arrow-clockwise" id="btn-roll"></i>ROLL DICE
+        </h4>
 
-        <h4 class="btn"><i class="bi bi-save-fill"></i> HOLD</h4>
+        <h4 class="btn" id="'btn-hold"><i class="bi bi-save-fill"></i> HOLD</h4>
       </div>
     </footer>
 
