@@ -7,32 +7,49 @@ header {
   display: flex;
   justify-content: space-around;
 }
-aside {
+section {
   font-size: larger;
 }
 .first,
 .second {
   width: 100%;
 }
+.score {
+  margin: 50% 2em;
+  font-size: 2em;
+}
 
-footer {
-  display: flex;
-  justify-content: space-around;
-}
 .btn {
-  padding: 0.5em;
+  display: flex;
+  justify-content: center;
 }
+
+.footer {
+  position: absolute;
+  justify-content: space-between;
+}
+
 .current1,
-.current2 {
-  width: 20%;
+.current2,
+.current-score {
+  position: absolute;
+  margin: 20rem 0rem;
   height: 6.25em;
+  width: 25%;
   text-align: center;
   background-color: red;
   overflow: auto;
 }
-.current2 {
-  order: 2;
+
+.current-score {
+  z-index: 1;
+  margin: 12.5em 0.5em;
+  height: 1.2em;
+  width: 20%;
+  text-align: center;
+  font-size: 1.5em;
 }
+
 .bi-plus-circle,
 .bi-save-fill,
 .bi-arrow-clockwise {
@@ -40,20 +57,10 @@ footer {
 }
 
 .dice-pic {
-  margin-top: 50%;
-  animation: shake 0.5s infinite;
+  margin: 100%;
+  width: 20%;
 }
-@keyframes #image {
-  0% {
-    transform: rotate(8deg);
-  }
-  50% {
-    transform: rotate(-8deg);
-  }
-  100% {
-    transform: rotate(8deg);
-  }
-}
+
 @media only screen and (max-width: 500px) {
   .dice {
     display: grid;

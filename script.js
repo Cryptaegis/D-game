@@ -1,37 +1,12 @@
-/* Function to change the player name
-function editNames() {
-  first = prompt("Change Player1 name");
-  second = prompt("Change player2 name");
-
-  document.querySelector("p.first").innerHTML = player1;
-
-  document.querySelector("p.second").innerHTML = player2;
-}
-
-// Function to roll the dice
-function rollTheDice() {
-  setTimeout(function () {
-    var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-    var randomNumber2 = Math.floor(Math.random() * 6) + 1;
-
-    document
-      .querySelector(".img1")
-      .setAttribute("src", "dice" + randomNumber1 + ".png");
-
-    document
-      .querySelector(".img2")
-      .setAttribute("src", "dice" + randomNumber2 + ".png");
-
-    if (randomNumber1 === randomNumber2) {
-      document.querySelector("h1").innerHTML = "Draw!";
-    } else if (randomNumber1 < randomNumber2) {
-      document.querySelector("h1").innerHTML = second + " WINS!";
-    } else {
-      document.querySelector("h1").innerHTML = first + " WINS!";
-    }
-  }, 2500);
-}*/
-
+const img = document.getElementById("dice-pic");
+const rollTheDice = document.getElementById("btn-roll");
+const first = document.getElementById("activePlayer");
+const second = document.getElementById("secondPlayer");
+const score1 = document.getElementById("score1");
+const score2 = document.getElementById("score2");
+let currentscore = document.getElementsByClassName("current-score");
+let activePlayer = [0, 0];
+let playing = true;
 let image = [
   "face-1.jpg",
   "face-2.jpg",
@@ -40,17 +15,22 @@ let image = [
   "face-5.jpg",
   "face-6.jpg",
 ];
-let die = document.querySelectorAll("image");
-//function to create a new game on click*/
-const newGame = document.getElementById("btn-new");
-const hold = document.getElementById("btn-hold");
-const pFirst = document.getElementById("first");
-const pSecond = document.getElementById("second");
-const rollTheDice = document.getElementById("btn-roll");
-let pic = documentgetElementById("dice-pic");
 
-rollDice = () => {
+rollTheDice.addEventListener("click", function () {
   let randomNumber = Math.floor(Math.random() * 6) + 1;
-  console.log(image[randomNumber]);
+  img.src = `images/face-${[randomNumber]}.jpg`;
+
+  if (playing) {
+	    currentscore += randomNumber;
+	    document.getElementById(`score${activePlayer}`).innerHTML = randomNumber;
+	  }else{
+	  changePlayer();
 };
-rollTheDice.addEventListener("click", rollDice);
+
+let changePlayer = () => {
+  currentscore = 0;
+  document.getElementById(`current-${activePlayer}`).textContent = currentscore;
+  activePlayer = activePlayer == 0 ? 1 : 0;
+  player0El.classList.toggle("player--active");
+  player1El.classList.toggle("player--active");
+}
